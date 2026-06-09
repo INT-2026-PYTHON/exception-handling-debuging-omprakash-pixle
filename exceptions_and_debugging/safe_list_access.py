@@ -77,3 +77,13 @@ Output Example 3:
 =================================================
 
 """
+def safe_get(items,index):
+    try:
+        return("ok",items[index])
+    except IndexError:
+        return("error","index out of range")
+    except TypeError:
+        return("error","index must be an int")
+    except Exception as e:
+        return("error",f"unexpected error:{e}")
+print(safe_get([10,20,30],1))
